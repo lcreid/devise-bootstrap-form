@@ -11,14 +11,14 @@ Gem::Specification.new do |spec|
   spec.email         = ["larry.reid@jadesystems.ca"]
 
   spec.summary       = "Generates nicer views for Devise that use Bootstrap via the `bootstrap_form` gem."
-  spec.description   = <<-DESC
-This gem generates Devise views styled with Bootstrap via the `bootstrap_form`
-gem. If you plan to use, or are using, `bootstrap_form` in your app, your Devise
-forms will be consistent with the rest of your forms.
+  spec.description   = <<~DESC
+    This gem generates Devise views styled with Bootstrap via the `bootstrap_form`
+    gem. If you plan to use, or are using, `bootstrap_form` in your app, your Devise
+    forms will be consistent with the rest of your forms.
 
-The generator will detect if you're using `devise_invitable`, and will generate
-`bootstrap_form` forms for its views as well. If you're using `devise-i18n`, the
-forms will use translations.
+    The generator will detect if you're using `devise_invitable`, and will generate
+    `bootstrap_form` forms for its views as well. If you're using `devise-i18n`, the
+    forms will use translations.
   DESC
   spec.homepage      = "https://github.com/lcreid/devise-bootstrap-form"
   spec.license       = "MIT"

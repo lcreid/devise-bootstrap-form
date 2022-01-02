@@ -41,8 +41,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
-gem 'bootstrap', '~> 4.0.0'
-gem "bootstrap_form", ">= 4.0.0"
+gem 'bootstrap', '~> 4.0'
+gem "bootstrap_form", "~> 4.0"
 gem 'devise'
 gem 'devise_invitable'
 gem 'devise-bootstrap-form', path: "../.."

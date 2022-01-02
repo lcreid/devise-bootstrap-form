@@ -1,4 +1,5 @@
-## Contributing
+# Contributing
+
 If you find a bug or have an idea for a feature:
 
 1. Search the issues to see if the bug has been found, or the feature has already been requested. If so, feel free to add your constructive input to the existing issue. Otherwise...
@@ -7,12 +8,14 @@ If you find a bug or have an idea for a feature:
 4. If you don't want to submit your own pull request, your issue is still welcome and we'll review it and respond appropriately.
 
 ## Testing
+
 ### Manual and Exploratory Testing
+
 There are test apps in `test/rails_app`, for the default locale, and `es_rails_app` for a Spanish locale.
 
-To use the `devise-bootstrap-form` gem:
+To use the `devise-bootstrap-form` gem in a test app:
 
-```
+```bash
 cd test/rails_app # or cd test/es_rails_app
 # Generate the view in the test app
 rails g devise:views:bootstrap_form
@@ -22,23 +25,32 @@ rails s -b 0.0.0.0 &
 
 ### Automated Testing
 
+To run the tests and the RuboCop checks:
+
+```bash
+rake
 ```
+
+To run just the tests:
+
+```bash
 rake test
 ```
 
 ## Gotchas
+
 To test that the views work for a model other than the default `User`, the test apps use `Person` as the Devise model. It's a bit frustrating to remember that you can't just cut and paste examples that assume the model is `User`.
 
-## Coding guidelines
+## Coding Guidelines
 
 This project uses [RuboCop](https://github.com/bbatsov/rubocop) to enforce standard Ruby coding
 guidelines. The coding standards are close to the out-of-the-box RuboCop standards. The main differences are:
 
-* We prefer double-quoted strings
-* We allow 132 characters per line
-* We don't lint most of the Rails-generated files in the test application
+* We prefer double-quoted strings.
+* We allow 132 characters per line.
+* We don't lint most of the Rails-generated files in the test application.
 
-Note the Travis build will fail and your PR cannot be merged if the linter finds errors
+Note the GitHub actions build will fail and your PR cannot be merged if the linter finds errors.
 
-* Test that your contributions pass with `rake lint`
-* The linter is also run as part of the default rake task `rake`
+* Test that your contributions pass with `rake lint`.
+* The linter is also run as part of the default rake task `rake`.

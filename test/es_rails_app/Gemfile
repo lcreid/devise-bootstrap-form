@@ -3,8 +3,6 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.9'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
 gem 'rails-i18n'
@@ -42,8 +40,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
-gem 'bootstrap', '~> 4.0.0'
-gem "bootstrap_form", ">= 4.0.0"
+gem 'bootstrap', '~> 5.0'
+gem "bootstrap_form", "~> 5.0"
 gem 'devise-i18n'
 gem 'devise_invitable'
 gem 'devise-bootstrap-form', path: "../.."

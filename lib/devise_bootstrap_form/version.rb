@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
 module DeviseBootstrapForm
-  VERSION = "0.3.0"
+  # Bump major version if Bootstrap version changes our views.
+  VERSION = "1.0.0"
 end

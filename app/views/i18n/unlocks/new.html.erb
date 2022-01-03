@@ -7,7 +7,7 @@
         <%= render "devise/shared/error_messages", resource: resource %>
 
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-        <%= f.form_group do %>
+        <%= f.form_group class: "d-grid" do %>
           <%= f.submit t('.resend_unlock_instructions'), class: "btn btn-primary btn-block btn-lg" %>
         <% end %>
       <% end %>

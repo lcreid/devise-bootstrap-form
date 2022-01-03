@@ -38,7 +38,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "bootstrap_form", "~> 4.0"
+  spec.add_dependency "bootstrap_form", "~> 5.0"
   # Devise deprecated devise_error_messages! at 4.6.0, so for later versions
   # we add a new partial.
   spec.add_dependency "devise", ">= 4.6.0"

@@ -23,17 +23,6 @@
 
 * Fix dependencies so we only use Bootstrap 4.
 
-## [0.4.0][] (2022-01-02)
-
-### New features
-
-* Use GitHub actions instead of Travis.
-* New RuboCop rules.
-
-### Bugfixes
-
-* Fix dependencies so we only use Bootstrap 4.
-
 ## [0.3.0]
 
 ### New features

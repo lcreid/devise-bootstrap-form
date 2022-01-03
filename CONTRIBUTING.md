@@ -9,6 +9,8 @@ If you find a bug or have an idea for a feature:
 
 ## Testing
 
+There are automated tests, and test apps that allow you do manual testing and explore the gem.
+
 ### Manual and Exploratory Testing
 
 There are test apps in `test/rails_app`, for the default locale, and `es_rails_app` for a Spanish locale.
@@ -23,18 +25,28 @@ rails s -b 0.0.0.0 &
 # Navigate to localhost:3000/people/sign_in
 ```
 
+To change the version of Rails for the test app:
+
+```bash
+export BUNDLE_GEMFILE=gemfiles/7.0.gemfile # change this to the version of Rails you need
+bundle update
+rails s -b 0.0.0.0 &
+```
+
 ### Automated Testing
 
-To run the tests and the RuboCop checks:
+To test locally against a specific version of Rails, do the following:
+
+```bash
+export BUNDLE_GEMFILE=gemfiles/7.0.gemfile # change this to the version of Rails you need
+bundle update
+rake test
+```
+
+To run the tests and the RuboCop checks, assuming you've set the `BUNDLE_GEMFILE` as above:
 
 ```bash
 rake
-```
-
-To run just the tests:
-
-```bash
-rake test
 ```
 
 ## Gotchas

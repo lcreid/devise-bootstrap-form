@@ -10,6 +10,10 @@
 *.gem
 .cache/
 
+.netrc
+.node_repl_history
+.yarnrc
+
 .vagrant/
 # For some reason, the test cases generate the mailer views in this directory,
 # as well as the `test/rails_app/app/views/devise/mailer` directory.

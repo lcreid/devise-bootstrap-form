@@ -79,41 +79,41 @@ class ViewsGeneratorTest < Test
     scope = "devise" if scope.nil?
 
     assert_file "app/views/#{scope}/confirmations/new.html.erb" do |content|
-      assert_match(/t\('.resend_confirmation_instructions'\)/, content)
+      assert_match(/t\(".resend_confirmation_instructions"\)/, content)
       assert_match "bootstrap_form_for", content
     end
     assert_file "app/views/#{scope}/passwords/edit.html.erb" do |content|
-      assert_match(/t\('.change_your_password'\)/, content)
+      assert_match(/t\(".change_your_password"\)/, content)
       assert_match "bootstrap_form_for", content
     end
     assert_file "app/views/#{scope}/passwords/new.html.erb" do |content|
-      assert_match(/t\('.forgot_your_password'\)/, content)
+      assert_match(/t\(".forgot_your_password"\)/, content)
       assert_match "bootstrap_form_for", content
     end
     assert_file "app/views/#{scope}/registrations/new.html.erb" do |content|
-      assert_match(/t\('.sign_up'\)/, content)
+      assert_match(/t\(".sign_up"\)/, content)
       assert_match "bootstrap_form_for", content
     end
     assert_file "app/views/#{scope}/registrations/edit.html.erb" do |content|
-      assert_match(/t\('.title', /, content)
+      assert_match(/t\(".title", /, content)
       assert_match "bootstrap_form_for", content
     end
     assert_file "app/views/#{scope}/sessions/new.html.erb" do |content|
-      assert_match(/t\('.sign_in'\)/, content)
+      assert_match(/t\(".sign_in"\)/, content)
       assert_match "bootstrap_form_for", content
     end
     assert_file "app/views/#{scope}/shared/_links.html.erb" do |content|
       assert_match(/t\(".sign_up"\)/, content)
       assert_match(/t\(".sign_in"\)/, content)
       assert_match(/t\(".forgot_your_password"\)/, content)
-      assert_match(/t\('.didn_t_receive_confirmation_instructions'\)/, content)
-      assert_match(/t\('.didn_t_receive_unlock_instructions'\)/, content)
+      assert_match(/t\(".didn_t_receive_confirmation_instructions"\)/, content)
+      assert_match(/t\(".didn_t_receive_unlock_instructions"\)/, content)
     end
     assert_file "app/views/#{scope}/shared/_error_messages.html.erb" do |content|
       assert_match(/resource: resource\.class\.model_name\.human\.downcase/, content)
     end
     assert_file "app/views/#{scope}/unlocks/new.html.erb" do |content|
-      assert_match(/t\('.resend_unlock_instructions'\)/, content)
+      assert_match(/t\(".resend_unlock_instructions"\)/, content)
       assert_match "bootstrap_form_for", content
     end
   end

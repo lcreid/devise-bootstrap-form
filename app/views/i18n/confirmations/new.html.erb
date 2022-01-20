@@ -1,7 +1,7 @@
 <div class="devise-bootstrap-form">
   <div class="devise-bootstrap-form-row">
     <div class="devise-bootstrap-form-col">
-      <h2 class="text-center"><%= t('.resend_confirmation_instructions') %></h2>
+      <h2 class="text-center"><%= t(".resend_confirmation_instructions") %></h2>
 
       <%= bootstrap_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
@@ -11,7 +11,7 @@
                           autocomplete: "email",
                           value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
         <%= f.form_group class: "d-grid" do %>
-          <%= f.submit t('.resend_confirmation_instructions'), class: 'btn btn-primary btn-lg btn-block' %>
+          <%= f.submit t(".resend_confirmation_instructions"), class: "btn btn-primary btn-lg btn-block" %>
         <% end %>
       <% end %>
 

@@ -16,12 +16,12 @@
                        help: t(".we_need_your_current_password_to_confirm_your_changes") %>
 
   <%= f.form_group class: "d-grid" do %>
-    <%= f.submit t(".update"), class: "btn btn-lg btn-block btn-primary" %>
+    <%= f.submit t(".update"), class: "btn btn-lg btn-primary" %>
   <% end %>
 <% end %>
 
 <h2><%= t(".cancel_my_account") %></h2>
 
-<p><%= t(".unhappy") %> <%= button_to t(".cancel_my_account"), registration_path(resource_name), class: "btn btn-block btn-danger", data: { confirm: t(".are_you_sure") }, method: :delete %></p>
+<p><%= t(".unhappy") %> <%= button_to t(".cancel_my_account"), registration_path(resource_name), class: "btn btn-danger", data: { confirm: t(".are_you_sure") }, method: :delete %></p>
 
 <%= link_to t("devise.shared.links.back"), :back %>

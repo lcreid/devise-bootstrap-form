@@ -56,59 +56,67 @@ To switch back to what Devise gives you, remove the `app/views/devise` folder. Y
 
 ## Generated Layout
 
-Each of the forms in enclosed in the following:
+The generated view is just like the default Devise, but any form elements (e.g. e-mail field) are created using the `bootstrap_form` helpers rather than the stock Rails helpers. This ensures that your Devise forms will have a consistent look with the rest of the forms in your application.
+
+The generated view provides a pretty simple vertical layout. You can, and probably will, customize the generated views to your own tastes.
+
+Here's what the sign in view looks like (internationalized version):
 
 ```html
-<div class="devise-bootstrap-form">
-  <div class="devise-bootstrap-form-row">
-    <div class="devise-bootstrap-form-col">
-      <!-- the form... -->
-    </div>
-  </div>
+<h2 class="text-center"><%= t(".sign_in") %></h2>
+<%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<%= f.password_field :password, autocomplete: "current-password", placeholder: "Password" %>
+
+<% if devise_mapping.rememberable? -%>
+  <%= f.form_group do %>
+  <%= f.check_box :remember_me %>
+<% end %>
+<% end -%>
+
+<%= f.form_group class: "d-grid" do %>
+  <%= f.submit t(".sign_in"), class: "btn btn-primary btn-lg" %>
+<% end %>
+<% end %>
+<div class="text-center">
+  <%= render "devise/shared/links" %>
 </div>
 ```
 
-The generator also generates `app/assets/stylesheets/devise_bootstrap_form.scss` that contains the following:
-
-```css
-.devise-bootstrap-form {
-  @extend .container;
-}
-
-.devise-bootstrap-form-col {
-  @extend .col-12;
-  @extend .col-sm-8;
-  @extend .col-lg-6;
-}
-
-.devise-bootstrap-form-row {
-  @extend .row;
-  @extend .justify-content-around;
-}
-```
-
-You may want to adjust to your own tastes. For example, if the layout used by your Devise views already wraps the view in a `.container`, you can remove the:
-
-```css
-.devise-bootstrap-form {
-  @extend .container;
-}
-```
-
-from `app/assets/stylesheets/devise_bootstrap_form.scss`.
-
-You can also modify the views to change the surrounding `div`s to your needs, or change the SASS in `app/assets/stylesheets/devise_bootstrap_form.scss`.
-
-If you don't want the `devise_bootstrap_form`-generated styles at all, remove the following line from `app/asserts/application.scss`:
-
-```css
-@include "devise_bootstrap_form.scss";
-```
-
 ## Internationalization
+
 If your `Gemfile` includes `devise-i18n`, `devise-bootstrap-form` will generate views with translations. If you're also using `devise_invitable`, you have to manually copy its translations into your application from the [`devise_invitable` wiki](https://github.com/scambra/devise_invitable/wiki/I18n).
 
 Also, don't forget to add `gem "rails-i18n"` to your `Gemfile`.
+
+## Differences from the Previous Version
+
+- The generator no longer provides styles to format the Devise pages.
+- The generator no longer makes assumptions about the asset pipeline you're using, i.e. it doesn't assume you're using SASS, and it doesn't modify `app/assets/stylesheets/application.scss`.
+- The views are no longer wrapped in rows and columns. Out of the box the views are easier to drop into whatever formatting and layout you want.
+- Bootstrap 5 dropped the `btn-block` class, and `devise-bootstrap-form` used it on the default button in each view. See below for the view change.
+
+### Changes in the Generated Views
+
+Each view has a submit button, and the Bootstrap 4 mark-up looks like this:
+
+```ruby
+<%= f.form_group do %>
+  <%= f.submit t('.sign_up'), class: "btn btn-primary btn-block btn-lg" %>
+<% end %>
+```
+
+With Bootstrap 5, it looks like this:
+
+```ruby
+<%= f.form_group class: "d-grid" do %>
+  <%= f.submit t(".sign_up"), class: "btn btn-primary btn-lg" %>
+<% end %>
+```
+
+## Upgrading an Existing App to Bootstrap 5
+
+If you're upgrading an existing app to Bootstrap 5, it's probably easiest to just apply the [changes to the views](changes-in-the-generated-views) manually. The only time it would be worthwhile to regenerate the Bootstrap 5 forms would be if hadn't modified the generated forms.
 
 ## Contributing
 

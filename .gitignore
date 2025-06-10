@@ -29,4 +29,15 @@
 # For Alpine images
 .ash_history
 
+.npm/
+node_modules/
+
+.ssh/
+.gnupg/
+.gitconfig
+
 vendor/bundle
+
+.vscode-server/
+
+compose.override.yml

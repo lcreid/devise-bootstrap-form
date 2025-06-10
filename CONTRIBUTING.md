@@ -49,6 +49,17 @@ To run the tests and the RuboCop checks, assuming you've set the `BUNDLE_GEMFILE
 rake
 ```
 
+## New Version of Rails
+
+I create a new app from scratch in a new directory.
+
+1. Install latest Rails: `gem install rails`.
+1. Create a new app: `cd test && rails new rails_app_8.0 --skip-git --javascript=esbuild --css bootstrap`.
+1. `cd rails_app_8.0`.
+1. `rails db:prepare`.
+1. Update the `web` line of `Procfile.dov` to: `web: env RUBY_DEBUG_OPEN=true bin/rails server -b 0.0.0.0`.
+1. `bin/dev`.
+
 ## Gotchas
 
 To test that the views work for a model other than the default `User`, the test apps use `Person` as the Devise model. It's a bit frustrating to remember that you can't just cut and paste examples that assume the model is `User`.

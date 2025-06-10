@@ -6,14 +6,13 @@ It also makes the Devise views simpler, because the code to define forms using `
 
 You can find usage information below, but the gist of it is you'll run `rails g devise:views:bootstrap_form` instead of the normal `rails g devise:views`.
 
-If you're just looking for Bootstrap markup on your Devise views, and don't want to use `bootstrap_form`, then you should look into the [`devise-bootstrapped`](https://github.com/king601/devise-bootstrapped) gem, or [`devise-bootstrap-views`](https://github.com/hisea/devise-bootstrap-views).
+If you're just looking for Bootstrap markup on your Devise views, and don't want to use `bootstrap_form`, then you should look into the [`devise-bootstrapped`](https://github.com/king601/devise-bootstrapped) gem, or the [`devise-bootstrap-views`](https://github.com/hisea/devise-bootstrap-views) gem.
 
 ## Installation
 
 Add these lines to your application's `Gemfile`:
 
 ```ruby
-gem 'bootstrap', '~> 5.0'
 gem "bootstrap_form", "~> 5.0"
 gem 'devise'
 # gem 'devise-i18n'

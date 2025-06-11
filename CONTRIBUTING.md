@@ -54,7 +54,7 @@ rake
 I create a new app from scratch in a new directory.
 
 1. Install latest Rails: `gem install rails`.
-1. Create a new app: `cd test && rails new rails_app_8.0 --skip-git --javascript=esbuild --css bootstrap`.
+1. Create a new app: `cd test && rails new rails_app_8.0 --skip-git --javascript=esbuild --css bootstrap --skip-action-mailbox --skip-active-storage --skip-action-cable --skip-kamal --skip-solid`.
 1. `cd rails_app_8.0`.
 1. `rails db:prepare`.
 1. Update the `web` line of `Procfile.dov` to: `web: env RUBY_DEBUG_OPEN=true bin/rails server -b 0.0.0.0`.
@@ -65,6 +65,18 @@ I create a new app from scratch in a new directory.
     ```
 1. Follow the instructions in the [above section](#manual-and-exploratory-testing).
 1. Restart the server.
+
+### Internationalization
+
+**Very Important**
+
+To create a new instance of the test app for Spanish, you have to "customize" the translations provided by the `devise-i18n` gem. Generate them:
+
+```
+rails g devise:i18n:locale es
+```
+
+then change the instances of `user` in `config/locales/es.yml` to `person`.
 
 ## Gotchas
 

@@ -1,0 +1,30 @@
+/.bundle/
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Ignore uploaded files in development
+/storage/*
+!/storage/.keep
+
+/db/*.sqlite3
+
+/.yardoc
+/Gemfile.lock
+*.gemfile.lock
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/tmp/
+*.gem
+.cache/
+
+.netrc
+.node_repl_history
+.yarnrc
+
+/app/assets/builds/

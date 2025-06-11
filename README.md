@@ -14,10 +14,10 @@ Add these lines to your application's `Gemfile`:
 
 ```ruby
 gem "bootstrap_form", "~> 5.0"
-gem 'devise'
-# gem 'devise-i18n'
-# gem 'devise_invitable'
-gem 'devise-bootstrap-form'
+gem "devise"
+# gem "devise-i18n"
+# gem "devise_invitable"
+gem "devise-bootstrap-form"
 ```
 
 And then execute:
@@ -26,8 +26,8 @@ And then execute:
 bundle install
 ```
 
-There are additional installation instructions for [`bootstrap_form`](https://github.com/bootstrap-ruby/bootstrap_form#installation),  [`bootstrap`](https://github.com/twbs/bootstrap-rubygem#a-ruby-on-rails), [`devise`](https://github.com/plataformatec/devise) that you must complete before using `devise-bootstrap-form`, and
-[`devise-i18n`](https://github.com/tigrish/devise-i18n).
+There are additional installation instructions for [`bootstrap_form`](https://github.com/bootstrap-ruby/bootstrap_form#installation), [`devise`](https://github.com/plataformatec/devise) that you must complete before using `devise-bootstrap-form`, and
+[`devise-i18n`](https://github.com/devise-i18n/devise-i18n).
 
 Note that as of Devise 4.6.0, `devise_error_messages!` is deprecated in favour of the `_error_messages.html.erb` partial. `devise-bootstrap-form` versions 0.3.0 and higher generate views that use the `_error_messages.html.erb` partial. If you need to use `devise_error_messages!`, use this line in your `Gemfile`:
 

@@ -59,6 +59,10 @@ I create a new app from scratch in a new directory.
 1. `rails db:prepare`.
 1. Update the `web` line of `Procfile.dov` to: `web: env RUBY_DEBUG_OPEN=true bin/rails server -b 0.0.0.0`.
 1. `bin/dev`.
+1. Follow the standard installation instructions from the [README](), but get the `devise-bootstrap-form` gem from the parent directory.
+    ```
+    gem "devise-bootstrap-form", path: "../.."
+    ```
 1. Follow the instructions in the [above section](#manual-and-exploratory-testing).
 1. Restart the server.
 

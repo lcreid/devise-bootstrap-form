@@ -21,7 +21,7 @@ To use the `devise-bootstrap-form` gem in a test app:
 cd test/rails_app # or cd test/es_rails_app
 # Generate the view in the test app
 rails g devise:views:bootstrap_form
-rails s -b 0.0.0.0 &
+bin/dev
 # Navigate to localhost:3000/people/sign_in
 ```
 
@@ -30,7 +30,7 @@ To change the version of Rails for the test app:
 ```bash
 export BUNDLE_GEMFILE=gemfiles/7.0.gemfile # change this to the version of Rails you need
 bundle update
-rails s -b 0.0.0.0 &
+bin/dev
 ```
 
 ### Automated Testing
@@ -59,6 +59,8 @@ I create a new app from scratch in a new directory.
 1. `rails db:prepare`.
 1. Update the `web` line of `Procfile.dov` to: `web: env RUBY_DEBUG_OPEN=true bin/rails server -b 0.0.0.0`.
 1. `bin/dev`.
+1. Follow the instructions in the [above section](#manual-and-exploratory-testing).
+1. Restart the server.
 
 ## Gotchas
 

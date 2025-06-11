@@ -16,7 +16,7 @@ module Devise
         end
       end
 
-      desc "Copies views styled for Bootstrap 4 via the `bootstrap_form` gem"
+      desc "Copies views styled for Bootstrap via the `bootstrap_form` gem"
 
       source_root File.expand_path("../../../../app", __dir__)
 
@@ -30,7 +30,12 @@ module Devise
 
       def copy_assets
         directory "assets/stylesheets", "app/assets/stylesheets"
-        append_to_file "app/assets/stylesheets/application.scss" do
+        target_file = if File.exist?("app/assets/stylesheets/application.bootstrap.scss")
+          "app/assets/stylesheets/application.bootstrap.scss"
+        else
+          app/assets/stylesheets/application.scss
+        end
+        append_to_file target_file do
           '@import "devise_bootstrap_form";'
         end
       end

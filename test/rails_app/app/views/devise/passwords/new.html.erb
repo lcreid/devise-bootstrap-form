@@ -1,20 +1,13 @@
-<div class="devise-bootstrap-form">
-  <div class="devise-bootstrap-form-row">
-    <div class="devise-bootstrap-form-col">
-      <h2 class="text-center">Forgot your password?</h2>
+<h2 class="text-center">Forgot your password?</h2>
 
-      <%= bootstrap_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-        <%= render "devise/shared/error_messages", resource: resource %>
-        <br>
-        <p class="text-left">Please enter your email address and we will send you a link to reset your password.</p>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-        <%= f.form_group do %>
-          <%= f.submit "Send me reset password instructions", class: 'btn btn-primary btn-block btn-lg' %>
-        <% end %>
-      <% end %>
-      <div class="text-center">
-        <%= render "devise/shared/links" %>
-      </div>
-    </div>
-  </div>
+<%= bootstrap_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <p class="text-left">Please enter your email address and we will send you a link to reset your password.</p>
+  <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <%= f.form_group class: "d-grid" do %>
+    <%= f.submit "Send me reset password instructions", class: "btn btn-primary btn-lg" %>
+  <% end %>
+<% end %>
+<div class="d-grid">
+  <%= render "devise/shared/links" %>
 </div>

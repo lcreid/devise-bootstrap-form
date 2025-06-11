@@ -6,7 +6,7 @@ source "https://rubygems.org"
 gemspec path: ".."
 
 # Set a Rails version compatible with a Ruby version
-gem "rails", "~> 5.2.0"
+gem "rails", "~> 7.2.2"
 
 group :development do
   gem "rubocop", require: false

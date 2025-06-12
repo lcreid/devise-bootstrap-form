@@ -28,18 +28,6 @@ module Devise
         copy_invitable_devise
       end
 
-      def copy_assets
-        directory "assets/stylesheets", "app/assets/stylesheets"
-        target_file = if File.exist?("app/assets/stylesheets/application.bootstrap.scss")
-                        "app/assets/stylesheets/application.bootstrap.scss"
-                      else
-                        "app/assets/stylesheets/application.scss"
-                      end
-        append_to_file target_file do
-          '@import "devise_bootstrap_form";'
-        end
-      end
-
       private
 
       def copy_base_devise(source)

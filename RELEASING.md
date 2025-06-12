@@ -6,8 +6,7 @@ Follow these steps to release a new version of `devise-bootstrap-form` to `rubyg
 
 * You must have commit rights to the `devise-bootstrap-form` repository.
 * You must have push rights for the `devise-bootstrap-form` gem on `rubygems.org`.
-* You must be using Ruby >= 2.2.
-* Your GitHub credentials must be available to Chandler via `~/.netrc` or an environment variable, [as explained here](https://github.com/mattbrictson/chandler#2-configure-credentials).
+* You must be using Ruby >= 3.2.
 
 ## How to release
 

@@ -1,0 +1,37 @@
+# Set up the Selenium container based on the Selenium official:
+# https://github.com/SeleniumHQ/docker-selenium/blob/trunk/docker-compose-v3.yml
+# And:
+# https://medium.com/@retrorubies/chrome-as-a-service-for-rails-testing-b1a45e70fec1
+
+# This file uses Docker ephemeral ports. To see the ports you need to use from the host:
+#   docker compose port web [port number]
+
+services:
+  web:
+    image: lenchoreyes/jade:rails-app-${RUBY_VERSION:-3.3}-sqlite-${DISTRO:-bookworm}
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/app:cached
+    environment:
+      - HISTFILE=/app/.bash_history
+      - SELENIUM_HOST=selenium
+      - SELENIUM_PORT=4444
+      - TEST_APP_HOST=shell
+      - TEST_APP_PORT=3001
+    ports:
+      - "3000"
+    command: /bin/bash
+
+  selenium:
+    image: selenium/standalone-chrome:133.0
+    shm_size: 2gb
+    logging:
+      driver: none
+    stdin_open: true
+    tty: true
+    environment:
+      - LANG=en_CA.UTF-8
+    ports:
+      - '5900'
+      - '7900'

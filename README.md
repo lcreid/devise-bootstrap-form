@@ -6,19 +6,18 @@ It also makes the Devise views simpler, because the code to define forms using `
 
 You can find usage information below, but the gist of it is you'll run `rails g devise:views:bootstrap_form` instead of the normal `rails g devise:views`.
 
-If you're just looking for Bootstrap markup on your Devise views, and don't want to use `bootstrap_form`, then you should look into the [`devise-bootstrapped`](https://github.com/king601/devise-bootstrapped) gem, or [`devise-bootstrap-views`](https://github.com/hisea/devise-bootstrap-views).
+If you're just looking for Bootstrap markup on your Devise views, and don't want to use `bootstrap_form`, then you should look into the [`devise-bootstrapped`](https://github.com/king601/devise-bootstrapped) gem, or the [`devise-bootstrap-views`](https://github.com/hisea/devise-bootstrap-views) gem.
 
 ## Installation
 
 Add these lines to your application's `Gemfile`:
 
 ```ruby
-gem 'bootstrap', '~> 5.0'
 gem "bootstrap_form", "~> 5.0"
-gem 'devise'
-# gem 'devise-i18n'
-# gem 'devise_invitable'
-gem 'devise-bootstrap-form'
+gem "devise"
+# gem "devise-i18n"
+# gem "devise_invitable"
+gem "devise-bootstrap-form"
 ```
 
 And then execute:
@@ -27,8 +26,8 @@ And then execute:
 bundle install
 ```
 
-There are additional installation instructions for [`bootstrap_form`](https://github.com/bootstrap-ruby/bootstrap_form#installation),  [`bootstrap`](https://github.com/twbs/bootstrap-rubygem#a-ruby-on-rails), [`devise`](https://github.com/plataformatec/devise) that you must complete before using `devise-bootstrap-form`, and
-[`devise-i18n`](https://github.com/tigrish/devise-i18n).
+There are additional installation instructions for [`bootstrap_form`](https://github.com/bootstrap-ruby/bootstrap_form#installation), [`devise`](https://github.com/plataformatec/devise) that you must complete before using `devise-bootstrap-form`, and
+[`devise-i18n`](https://github.com/devise-i18n/devise-i18n).
 
 Note that as of Devise 4.6.0, `devise_error_messages!` is deprecated in favour of the `_error_messages.html.erb` partial. `devise-bootstrap-form` versions 0.3.0 and higher generate views that use the `_error_messages.html.erb` partial. If you need to use `devise_error_messages!`, use this line in your `Gemfile`:
 

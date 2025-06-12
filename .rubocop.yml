@@ -44,44 +44,18 @@ Layout/LineLength:
   # The IgnoreCopDirectives option causes the LineLength rule to ignore cop
   # directives like '# rubocop: enable ...' when calculating a line's length.
   IgnoreCopDirectives: true
-  # The IgnoredPatterns option is a list of !ruby/regexp and/or string
-  # elements. Strings will be converted to Regexp objects. A line that matches
-  # any regular expression listed in this option will be ignored by LineLength.
-  IgnoredPatterns: []
+  # AllowedPatterns: []
 
-# Rails 5 only requires 2.2.2.
 AllCops:
   NewCops: enable
   DisplayCopNames: true
   DisplayStyleGuide: true
-  TargetRubyVersion: 2.6
+  TargetRubyVersion: 3.2
   Exclude:
     - Capfile
     - Gemfile
-    - "test/rails_app/bin/**/*"
-    - "test/rails_app/config/**/*"
-    - test/rails_app/config.ru
-    - "test/rails_app/db/**/*"
-    - "test/rails_app/log/**/*"
-    - "test/rails_app/tmp/**/*"
-    - "test/rails_app/vendor/**/*"
-    - "test/rails_app/node_modules/**/*"
-    - "test/rails_app/bower_components/**/*"
-    - test/rails_app/Gemfile
-    - test/rails_app/Guardfile
-    - test/rails_app/Rakefile
-    - "test/es_rails_app/bin/**/*"
-    - "test/es_rails_app/config/**/*"
-    - test/es_rails_app/config.ru
-    - "test/es_rails_app/db/**/*"
-    - "test/es_rails_app/log/**/*"
-    - "test/es_rails_app/tmp/**/*"
-    - "test/es_rails_app/vendor/**/*"
-    - "test/es_rails_app/node_modules/**/*"
-    - "test/es_rails_app/bower_components/**/*"
-    - test/es_rails_app/Gemfile
-    - test/es_rails_app/Guardfile
-    - test/es_rails_app/Rakefile
+    - test/es_rails_app/**/*
+    - test/rails_app/**/*
     - vendor/bundle/**/*
 
 Metrics/BlockLength:
@@ -99,9 +73,3 @@ Metrics/ClassLength:
 Metrics/MethodLength:
   Exclude:
     - test/**/*.rb
-
-# TODO: Remove this when minimum Ruby is 2.3.
-Layout/HeredocIndentation:
-  Exclude:
-    - Dangerfile
-    - devise-bootstrap-form.gemspec

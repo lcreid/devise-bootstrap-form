@@ -21,7 +21,7 @@ To use the `devise-bootstrap-form` gem in a test app:
 cd test/rails_app # or cd test/es_rails_app
 # Generate the view in the test app
 rails g devise:views:bootstrap_form
-rails s -b 0.0.0.0 &
+bin/dev
 # Navigate to localhost:3000/people/sign_in
 ```
 
@@ -30,7 +30,7 @@ To change the version of Rails for the test app:
 ```bash
 export BUNDLE_GEMFILE=gemfiles/7.0.gemfile # change this to the version of Rails you need
 bundle update
-rails s -b 0.0.0.0 &
+bin/dev
 ```
 
 ### Automated Testing
@@ -48,6 +48,35 @@ To run the tests and the RuboCop checks, assuming you've set the `BUNDLE_GEMFILE
 ```bash
 rake
 ```
+
+## New Version of Rails
+
+I create a new app from scratch in a new directory.
+
+1. Install latest Rails: `gem install rails`.
+1. Create a new app: `cd test && rails new rails_app_8.0 --skip-git --javascript=esbuild --css bootstrap --skip-action-mailbox --skip-active-storage --skip-action-cable --skip-kamal --skip-solid`.
+1. `cd rails_app_8.0`.
+1. `rails db:prepare`.
+1. Update the `web` line of `Procfile.dov` to: `web: env RUBY_DEBUG_OPEN=true bin/rails server -b 0.0.0.0`.
+1. `bin/dev`.
+1. Follow the standard installation instructions from the [README](), but get the `devise-bootstrap-form` gem from the parent directory.
+    ```
+    gem "devise-bootstrap-form", path: "../.."
+    ```
+1. Follow the instructions in the [above section](#manual-and-exploratory-testing).
+1. Restart the server.
+
+### Internationalization
+
+**Very Important**
+
+To create a new instance of the test app for Spanish, you have to "customize" the translations provided by the `devise-i18n` gem. Generate them:
+
+```
+rails g devise:i18n:locale es
+```
+
+then change the instances of `user` in `config/locales/es.yml` to `person`.
 
 ## Gotchas
 

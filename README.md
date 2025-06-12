@@ -74,7 +74,7 @@ Here's what the sign in view looks like (internationalized version):
 <% end -%>
 
 <%= f.form_group class: "d-grid" do %>
-  <%= f.submit t(".sign_in"), class: "btn btn-primary btn-lg" %>
+  <%= f.submit t(".sign_in"), class: "btn btn-primary btn-lg mb-3" %>
 <% end %>
 <% end %>
 <div class="text-center">
@@ -97,19 +97,19 @@ Also, don't forget to add `gem "rails-i18n"` to your `Gemfile`.
 
 ### Changes in the Generated Views
 
-Each view has a submit button, and the Bootstrap 4 mark-up looks like this:
+Each view has a submit button, and the Bootstrap 5 mark-up looks like this:
+
+```ruby
+<%= f.form_group class: "d-grid" do %>
+  <%= f.submit t(".sign_up"), class: "btn btn-primary btn-lg mb-3" %>
+<% end %>
+```
+
+With Bootstrap 4, it looks like this:
 
 ```ruby
 <%= f.form_group do %>
   <%= f.submit t('.sign_up'), class: "btn btn-primary btn-block btn-lg" %>
-<% end %>
-```
-
-With Bootstrap 5, it looks like this:
-
-```ruby
-<%= f.form_group class: "d-grid" do %>
-  <%= f.submit t(".sign_up"), class: "btn btn-primary btn-lg" %>
 <% end %>
 ```
 

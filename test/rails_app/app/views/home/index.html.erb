@@ -1,2 +1,3 @@
 Hello, World.
 <%= link_to("Sign In", new_person_session_path) %>
+<%= link_to("Sign Out", destroy_person_session_path, data: { turbo_method: :delete }) %>
